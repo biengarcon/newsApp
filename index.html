@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap-reboot.min.css" integrity="sha512-ZJ+KmS7LSGuRKphz9V5eX99TPMci9Ngt5lCk0XFdYJmBg+ZDr/4r/HSsMEiUKmR7bxe1eAv768c2YuSl/OGiFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="fixed-viewport">
+	<header>
+		<h1 class="title"><a href="index.html">News App</a></h2>
+		<div class="search">
+			<div class="icon icon-search" onclick="searchNews(event.target.nextElementSibling.value)"></div>
+			<input id="search-box" class="search-box" placeholder="Type something to start search" onkeydown="searchChange(event.target.value)">
+			<div id="clear-search" class="clear-search" onclick="resetSearch()">✖</div>
+		</div>
+		<nav class="navigation">
+			<ul class="menu">
+				<li class="menu-item">Categories
+					<ul class="sub-menu">
+						<li class="menu-item">Sport</li>
+						<li class="menu-item">World</li>
+						<li class="menu-item">Covid</li>
+						<li class="menu-item">Business</li>
+						<li class="menu-item">Politics</li>
+						<li class="menu-item">Science</li>
+						<li class="menu-item">Religion</li>
+						<li class="menu-item">Health</li>
+					</ul>
+				</li>
+				<li class="menu-item">⚡ Trending news</li>
+			</ul>
+			<div class="burger" onclick="toggleMenu(event)">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</nav>
+	</header>
+	<main id="main" class="main">
+		<div class="trending-news">
+			<div id="main-card" class="main-card"></div>
+			<div id="cards" class="cards"></div>
+			<div>
+				<button onclick="scrollUp()" id="scroll-button" class="scroll-button" title="Go to top">Scroll to top <img src="icons/arrow-up.svg" class="icon-arrow" />
+				</button>
+			</div>
+				
+		</div>
+	
+		<article class="article">
+			<div>
+				<img id="article-image" src="" class="image">
+			</div>
+			<div class="article-content">
+				<h1 id="article-title" class="article-title"></h1>
+				<div class="article-panel">
+					<strong>Written by <strong id="article-author"></strong></strong>
+					<span id="article-date" class="article-date"></span>
+				</div>
+				<hr class="article-separator" />
+				<div class="sections">
+					<section>
+						<p id="article-description"></p>
+						<p>
+							<strong><i class="reference">Section 1.10.33 of "Lorem ipsum"</i></strong>
+						</p>
+						<p>
+							Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+	The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+						</p>
+					</section>
+					<section>
+						<h2 class="section-title">Section</h2>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+						</p>
+					</section>
+					<section>
+						<h2 class="section-title">Section 1.10.33</h2>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+						</p>
+					</section>
+				</div>
+			</div>
+		</article>
+	</main>
+	<footer>
+		<strong>News App</strong> 2021 copyright all rights reserved
+	</footer>
+	<div id="spinner" class="spinner"></div>
+	<script src="index.js"></script>
+</body>
+</html>
